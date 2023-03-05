@@ -1,24 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:medical_history_app/common/text_styles.dart';
 
 class ConsultationItemBottom extends StatelessWidget {
-  const ConsultationItemBottom({Key? key}) : super(key: key);
+  final Function() onEditFeedbackTap;
+  final bool isEditFeedbackEnabled;
+  late TextEditingController? feedbackController;
+
+  ConsultationItemBottom(
+      {Key? key,
+      required this.onEditFeedbackTap,
+      this.isEditFeedbackEnabled = false,
+      this.feedbackController})
+      : super(key: key) {
+    if (feedbackController == null) {
+      feedbackController = TextEditingController(
+          text: "Every interaction with the hospital is great");
+    } else {
+      feedbackController?.text = "Every interaction with the hospital is great";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Color(0x1aC4C4C4),
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(16),bottomRight: Radius.circular(16))
-      ),
+          color: Color(0x1aC4C4C4),
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(16),
+              bottomRight: Radius.circular(16))),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [Text("Feedback"), Spacer(), Text("Edit")],
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Feedback",
+                style: AppTextStyles.smallBigBold,
+              ),
+              InkWell(
+                onTap: onEditFeedbackTap,
+                child: Text(
+                  "Edit",
+                  style: AppTextStyles.smallBigBold,
+                ),
+              )
+            ],
           ),
-          Text("Every intercation with the hospital is great")
+          SizedBox(
+            height: 4,
+          ),
+          (isEditFeedbackEnabled)
+              ? Builder(builder: (_) {
+                  return TextField(
+                    controller: feedbackController,
+                    maxLines: 2,
+                    autofocus: true,
+                  );
+                })
+              : Text(feedbackController?.text ?? ' ')
         ],
       ),
     );

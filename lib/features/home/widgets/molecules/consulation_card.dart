@@ -7,8 +7,16 @@ import 'package:medical_history_app/features/home/widgets/molecules/cosultation_
 
 class ConsultationCard extends StatelessWidget {
   final bool isDeleteEnabled;
+  final Function() onEditFeedbackTap;
+  final bool isEditFeedbackEnabled;
+  final TextEditingController? feedbackController;
 
-  const ConsultationCard({Key? key, this.isDeleteEnabled = false})
+  const ConsultationCard(
+      {Key? key,
+      required this.onEditFeedbackTap,
+      this.isDeleteEnabled = false,
+      this.isEditFeedbackEnabled = false,
+      this.feedbackController})
       : super(key: key);
 
   @override
@@ -43,14 +51,14 @@ class ConsultationCard extends StatelessWidget {
                 const SizedBox(
                   height: 16,
                 ),
-                ConsultationPrescription(),
+                const ConsultationPrescription(),
                 const SizedBox(
                   height: 16,
                 ),
                 Row(
                   children: [
                     CtaButton(text: "UPLOAD DOCS", onPressed: () {}),
-                    SizedBox(
+                    const SizedBox(
                       width: 16,
                     ),
                     if (isDeleteEnabled)
@@ -64,7 +72,11 @@ class ConsultationCard extends StatelessWidget {
               ],
             ),
           ),
-          ConsultationItemBottom()
+          ConsultationItemBottom(
+            onEditFeedbackTap: onEditFeedbackTap,
+            isEditFeedbackEnabled: isEditFeedbackEnabled,
+            feedbackController: feedbackController,
+          )
         ],
       ),
     );
