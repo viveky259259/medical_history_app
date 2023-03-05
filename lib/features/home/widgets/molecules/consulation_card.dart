@@ -27,24 +27,24 @@ class ConsultationCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                ConsultationTopItem(),
-                SizedBox(
+                const ConsultationTopItem(),
+                const SizedBox(
                   height: 4,
                 ),
                 Text(
                   "DR. Jordan Henderson",
                   style: AppTextStyles.normalBold,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Text("Aster RV - Multispeciality Hospital, JP Nagar, Bengaluru",
                     maxLines: 2, overflow: TextOverflow.ellipsis),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 ConsultationPrescription(),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 Row(
@@ -55,7 +55,7 @@ class ConsultationCard extends StatelessWidget {
                     ),
                     if (isDeleteEnabled)
                       CtaButton(
-                          text: "Delete",
+                          text: "DELETE",
                           bgColor: Color(0xffFDD6D4),
                           textColor: Color(0xffFC4D53),
                           onPressed: () {}),

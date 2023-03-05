@@ -6,19 +6,21 @@ class CtaButton extends StatelessWidget {
   final Function() onPressed;
   final Color bgColor;
   final Color? textColor;
+  final double? height;
 
   const CtaButton(
       {Key? key,
       required this.text,
       required this.onPressed,
       this.bgColor = HomeColors.ctaBgColor,
+      this.height,
       this.textColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 32,
+      height: height ?? 32,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
@@ -27,7 +29,7 @@ class CtaButton extends StatelessWidget {
           ),
           onPressed: onPressed,
           child: Text(
-            text.toUpperCase(),
+            text,
             style: TextStyle(
               color: textColor,
             ),
