@@ -7,6 +7,7 @@ class MedicalHistoryApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Medical History App",
       home: HomePage(),
     );
