@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_history_app/common/text_styles.dart';
-import 'package:medical_history_app/features/dashboard/widgets/atom/consultation_prescription.dart';
+
+import 'package:medical_history_app/features/history/widgets/atom/consultation_prescription.dart';
 import 'package:medical_history_app/features/home/widgets/atom/cosultation_item_bottom.dart';
 import 'package:medical_history_app/features/home/widgets/atom/cta_button.dart';
 import 'package:medical_history_app/features/home/widgets/molecules/cosultation_item_top.dart';
