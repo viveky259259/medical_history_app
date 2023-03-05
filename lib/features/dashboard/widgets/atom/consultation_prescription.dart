@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_history_app/features/prescription/pages/prescription_page.dart';
 
 class ConsultationPrescription extends StatelessWidget {
   const ConsultationPrescription({Key? key}) : super(key: key);
@@ -13,15 +14,26 @@ class ConsultationPrescription extends StatelessWidget {
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            return Container(
-              height: 48,
-              width: 48,
-              decoration: BoxDecoration(
+            return GestureDetector(
+              onTap: () async {
+                var result = await Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => PrescriptionPage(
+                          image: "assets/prescription.jpeg",
+                        )));
+                if (result is String && result.toString().isNotEmpty) {
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(SnackBar(content: Text(result.toString())));
+                }
+              },
+              child: Container(
+                height: 48,
+                width: 48,
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   image: DecorationImage(
                       image: AssetImage("assets/prescription.jpeg"),
-                  fit: BoxFit.cover
-                  ),
+                      fit: BoxFit.cover),
+                ),
               ),
             );
           },
