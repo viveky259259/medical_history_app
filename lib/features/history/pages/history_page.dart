@@ -2,19 +2,22 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:medical_history_app/common/constants.dart';
 import 'package:medical_history_app/common/text_styles.dart';
+import 'package:medical_history_app/features/consultation/add_consultation/pages/add_consultation_page.dart';
 import 'package:medical_history_app/features/home/widgets/atom/line_widget.dart';
 import 'package:medical_history_app/features/home/widgets/atom/plus_button.dart';
 import 'package:medical_history_app/features/home/widgets/organisms/consulation_dashboard_item_widget.dart';
+import 'package:page_transition/page_transition.dart';
 
-class DashboardPage extends StatefulWidget {
-  const DashboardPage({Key? key}) : super(key: key);
+class HistoryPage extends StatefulWidget {
+  const HistoryPage({Key? key}) : super(key: key);
 
   @override
-  State<DashboardPage> createState() => _DashboardPageState();
+  State<HistoryPage> createState() => _HistoryPageState();
 }
 
-class _DashboardPageState extends State<DashboardPage> {
+class _HistoryPageState extends State<HistoryPage> {
   late Size _screenSize;
   late ScrollController _scrollController;
   StreamController<double> streamController = StreamController<double>();
@@ -66,7 +69,27 @@ class _DashboardPageState extends State<DashboardPage> {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    SizedBox(child: PlusButton()),
+                                    SizedBox(
+                                        child: Hero(
+                                            tag: "add-consultation-hero-tag",
+                                            child: GestureDetector(
+                                                onTap: () {
+                                                  Navigator.of(context).push(
+                                                      PageTransition(
+                                                          type:
+                                                              PageTransitionType
+                                                                  .scale,
+                                                          alignment: Alignment
+                                                              .topRight,
+                                                          isIos: true,
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  AppConstants
+                                                                      .animtionTime),
+                                                          child:
+                                                              AddConsultationPage()));
+                                                },
+                                                child: PlusButton()))),
                                     StreamBuilder<double>(
                                       builder: (context,
                                           AsyncSnapshot<double> snapshot) {
