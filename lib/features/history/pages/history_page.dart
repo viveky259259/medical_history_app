@@ -69,27 +69,31 @@ class _HistoryPageState extends State<HistoryPage> {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    SizedBox(
+                                    GestureDetector(
+                                      onTap: () {
+                                              Navigator.of(context).push(
+                                                  PageTransition(
+                                                      type:
+                                                          PageTransitionType
+                                                              .scale,
+                                                      alignment: Alignment
+                                                          .topRight,
+                                                      isIos: true,
+                                                      duration: Duration(
+                                                          milliseconds:
+                                                              AppConstants
+                                                                  .animtionTime),
+                                                      child:
+                                                          AddConsultationPage()));
+                                            },
+                                      child: Material(
+                                        color: Colors.transparent,
                                         child: Hero(
                                             tag: "add-consultation-hero-tag",
-                                            child: GestureDetector(
-                                                onTap: () {
-                                                  Navigator.of(context).push(
-                                                      PageTransition(
-                                                          type:
-                                                              PageTransitionType
-                                                                  .scale,
-                                                          alignment: Alignment
-                                                              .topRight,
-                                                          isIos: true,
-                                                          duration: Duration(
-                                                              milliseconds:
-                                                                  AppConstants
-                                                                      .animtionTime),
-                                                          child:
-                                                              AddConsultationPage()));
-                                                },
-                                                child: PlusButton()))),
+                                            child: PlusButton(),
+                                          ),
+                                      ),
+                                    ),
                                     StreamBuilder<double>(
                                       builder: (context,
                                           AsyncSnapshot<double> snapshot) {

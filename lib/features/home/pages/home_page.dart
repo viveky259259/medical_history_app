@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_history_app/common/constants.dart';
+import 'package:medical_history_app/features/dashboard/pages/dashboard_page.dart';
 
 import 'package:medical_history_app/features/history/pages/history_page.dart';
 import 'package:medical_history_app/features/home/common/home_colors.dart';
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _pages = const [
-      TempPage(name: "Dashboard"),
+      DashboardPage(),
       HistoryPage(),
       TempPage(name: "Wellness"),
       TempPage(name: "Profile")
@@ -55,7 +56,8 @@ class _HomePageState extends State<HomePage> {
         unselectedItemColor: Colors.blue,
         onTap: (selectedIndex) {
           _pageController.animateToPage(selectedIndex,
-              duration: Duration(microseconds: AppConstants.animtionTime), curve: Curves.easeIn);
+              duration: Duration(microseconds: AppConstants.animtionTime),
+              curve: Curves.easeIn);
         },
         items: [
           BottomNavigationBarItem(
@@ -63,8 +65,10 @@ class _HomePageState extends State<HomePage> {
             icon: CircleAvatar(
                 backgroundColor:
                     _currentPageIndex == 0 ? Colors.black : Colors.transparent,
-                child: Icon(
-                  Icons.home,
+                child: Image.asset(
+                  "assets/home_icon.png",
+                  height: 24,
+                  width: 24,
                   color: _currentPageIndex == 0 ? Colors.white : Colors.black,
                 )),
           ),
@@ -83,8 +87,10 @@ class _HomePageState extends State<HomePage> {
             icon: CircleAvatar(
                 backgroundColor:
                     _currentPageIndex == 2 ? Colors.black : Colors.transparent,
-                child: Icon(
-                  Icons.wheelchair_pickup,
+                child:  Image.asset(
+                  "assets/wellness.png",
+                  height: 24,
+                  width: 24,
                   color: _currentPageIndex == 2 ? Colors.white : Colors.black,
                 )),
           ),
@@ -93,8 +99,10 @@ class _HomePageState extends State<HomePage> {
             icon: CircleAvatar(
                 backgroundColor:
                     _currentPageIndex == 3 ? Colors.black : Colors.transparent,
-                child: Icon(
-                  Icons.person,
+                child:   Image.asset(
+                  "assets/user.png",
+                  height: 24,
+                  width: 24,
                   color: _currentPageIndex == 3 ? Colors.white : Colors.black,
                 )),
           )

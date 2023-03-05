@@ -5,6 +5,7 @@ class AppTextStyles {
       const TextStyle(fontWeight: FontWeight.w600, fontSize: 20);
   static TextStyle normalBold =
       const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+  static TextStyle normal = const TextStyle(fontWeight: FontWeight.normal,fontSize: 16);
   static TextStyle smallNormal =
       const TextStyle(fontSize: 12, fontWeight: FontWeight.w300);
   static TextStyle smallBold =
