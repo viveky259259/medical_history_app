@@ -119,9 +119,9 @@ class _DashboardPageState extends State<DashboardPage> {
                               SizedBox(
                                 height: 8,
                               ),
+                              ConsultationDashboardItemWidget(isDeleteEnabled: true),
                               ConsultationDashboardItemWidget(),
-                              ConsultationDashboardItemWidget(),
-                              ConsultationDashboardItemWidget(),
+                              ConsultationDashboardItemWidget(isDeleteEnabled: true),
                               ConsultationDashboardItemWidget(),
                               ConsultationDashboardItemWidget(),
                               ConsultationDashboardItemWidget(),

@@ -3,7 +3,11 @@ import 'package:medical_history_app/features/home/widgets/atom/consulation_time_
 import 'package:medical_history_app/features/home/widgets/molecules/consulation_card.dart';
 
 class ConsultationDashboardItemWidget extends StatelessWidget {
-  const ConsultationDashboardItemWidget({Key? key}) : super(key: key);
+  final bool isDeleteEnabled;
+
+  const ConsultationDashboardItemWidget(
+      {Key? key, this.isDeleteEnabled = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +15,11 @@ class ConsultationDashboardItemWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
+      children: [
         ConsultationTimeWidget(),
         Expanded(
             child: ConsultationCard(
-          isDeleteEnabled: true,
+          isDeleteEnabled: isDeleteEnabled,
         ))
       ],
     );

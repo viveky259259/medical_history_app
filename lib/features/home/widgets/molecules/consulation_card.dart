@@ -41,11 +41,11 @@ class ConsultationCard extends StatelessWidget {
                 Text("Aster RV - Multispeciality Hospital, JP Nagar, Bengaluru",
                     maxLines: 2, overflow: TextOverflow.ellipsis),
                 SizedBox(
-                  height: 8,
+                  height: 16,
                 ),
                 ConsultationPrescription(),
                 SizedBox(
-                  height: 8,
+                  height: 16,
                 ),
                 Row(
                   children: [

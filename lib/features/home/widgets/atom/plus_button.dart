@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class PlusButton extends StatelessWidget {
@@ -7,15 +9,15 @@ class PlusButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return SizedBox(
-        height: constraints.maxWidth,
-        width: constraints.maxWidth,
+        height: min(64, constraints.maxWidth),
+        width: min(64, constraints.maxWidth),
         child: Stack(
           alignment: Alignment.center,
           children: [
             Container(
               padding: EdgeInsets.zero,
               decoration: BoxDecoration(
-                  color: Color(0x6f0037ff),
+                  color: Color(0x2f0037ff),
                   borderRadius: BorderRadius.all(Radius.circular(200))),
             ),
             Container(
@@ -25,14 +27,15 @@ class PlusButton extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Color(0xff0037ff),
               ),
-              child: Center(
-                  child: Text(
+              alignment: Alignment.center,
+              child: Text(
                 "+",
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 32,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
-              )),
+              ),
             ),
           ],
         ),

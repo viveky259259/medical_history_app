@@ -17,18 +17,21 @@ class CtaButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(48))),
-          backgroundColor: bgColor,
-        ),
-        onPressed: onPressed,
-        child: Text(
-          text.toUpperCase(),
-          style: TextStyle(
-            color: textColor,
+    return SizedBox(
+      height: 32,
+      child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(48))),
+            backgroundColor: bgColor,
           ),
-        ));
+          onPressed: onPressed,
+          child: Text(
+            text.toUpperCase(),
+            style: TextStyle(
+              color: textColor,
+            ),
+          )),
+    );
   }
 }
