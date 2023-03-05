@@ -35,7 +35,6 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     _screenSize = MediaQuery.of(context).size;
-    print(_screenSize);
     return Scaffold(
       backgroundColor: Color.fromRGBO(176, 184, 200, 0.4),
       body: SafeArea(child: LayoutBuilder(builder: (context, cns) {
@@ -82,9 +81,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                                   (snapshot.data ?? 0),
                                               minWidth: 3,
                                               maxWidth: 3);
-                                          print("eee ${_cns}");
                                         } catch (e) {}
-                                        print(_cns);
                                         return ConstrainedBox(
                                             constraints: _cns ?? constraints,
                                             child: TimerLineWidget());
@@ -119,9 +116,11 @@ class _DashboardPageState extends State<DashboardPage> {
                               SizedBox(
                                 height: 8,
                               ),
-                              ConsultationDashboardItemWidget(isDeleteEnabled: true),
+                              ConsultationDashboardItemWidget(
+                                  isDeleteEnabled: true),
                               ConsultationDashboardItemWidget(),
-                              ConsultationDashboardItemWidget(isDeleteEnabled: true),
+                              ConsultationDashboardItemWidget(
+                                  isDeleteEnabled: true),
                               ConsultationDashboardItemWidget(),
                               ConsultationDashboardItemWidget(),
                               ConsultationDashboardItemWidget(),

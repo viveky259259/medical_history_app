@@ -9,4 +9,6 @@ class AppTextStyles {
       const TextStyle(fontSize: 12, fontWeight: FontWeight.w300);
   static TextStyle smallBold =
       const TextStyle(fontSize: 12, fontWeight: FontWeight.bold);
+  static TextStyle smallBigBold =
+  const TextStyle(fontSize: 14, fontWeight: FontWeight.bold);
 }
