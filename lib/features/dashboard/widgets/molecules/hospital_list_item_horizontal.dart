@@ -14,11 +14,9 @@ class HostpitalListItemHorizontal extends StatelessWidget {
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Stack(
         children: [
-          FittedBox(
-            child: Image.asset(
-              "assets/hospital_photo.png",
-              fit: BoxFit.cover,
-            ),
+          Image.asset(
+            "assets/hospital_photo.png",
+            fit: BoxFit.cover,
           ),
           Positioned(
               top: 16,
