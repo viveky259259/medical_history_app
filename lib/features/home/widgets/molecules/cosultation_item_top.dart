@@ -9,7 +9,7 @@ class ConsultationTopItem extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        ConsultationType(),
+        const ConsultationType(),
 
         Image.asset("assets/aster_logo.png",height: 16,width: 48,),
       ],

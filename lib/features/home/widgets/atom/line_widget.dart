@@ -7,7 +7,7 @@ class TimerLineWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 1,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0x1a0037ff),
       ),
     );

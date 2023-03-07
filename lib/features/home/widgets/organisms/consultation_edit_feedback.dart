@@ -12,7 +12,7 @@ class ConsultationEditFeedback extends StatefulWidget {
   final TextEditingController feedbackController;
   final Widget child;
 
-  ConsultationEditFeedback(
+  const ConsultationEditFeedback(
       {Key? key,
       required this.child,
       required this.onDismiss,
@@ -35,8 +35,9 @@ class _ConsultationEditFeedbackState extends State<ConsultationEditFeedback>
   void initState() {
     super.initState();
 
-    animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: AppConstants.animtionTime));
+    animationController = AnimationController(
+        vsync: this,
+        duration: const Duration(milliseconds: AppConstants.animtionTime));
     animation = IntTween(begin: 100, end: 0).animate(
         CurvedAnimation(parent: animationController, curve: Curves.easeOut));
 
@@ -55,73 +56,70 @@ class _ConsultationEditFeedbackState extends State<ConsultationEditFeedback>
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.grey.shade300,
       body: SafeArea(
-        child: Container(
-          child: Stack(
-            children: [
-              Positioned.fill(
-                top: MediaQuery.of(context).padding.top - animation.value,
-                child: Container(
-                  alignment: Alignment.topCenter,
-                  child: DismissButton(
-                    onPressed: () {
-                      animationController.reverse();
-                      animationController.addStatusListener((status) {
-                        widget.onDismiss();
-                      });
-                    },
-                    bgColor: Colors.grey.shade50,
-                    textColor: Colors.black,
-                  ),
+        child: Stack(
+          children: [
+            Positioned.fill(
+              top: MediaQuery.of(context).padding.top - animation.value,
+              child: Container(
+                alignment: Alignment.topCenter,
+                child: DismissButton(
+                  onPressed: () {
+                    animationController.reverse();
+                    animationController.addStatusListener((status) {
+                      widget.onDismiss();
+                    });
+                  },
+                  bgColor: Colors.grey.shade50,
+                  textColor: Colors.black,
                 ),
               ),
-              Positioned(
-                  left: widget.offset.dx,
-                  right: 0,
-                  top: widget.offset.dy - animation.value,
-                  child: widget.child),
-              Positioned(
-                  left: widget.offset.dx + 16,
-                  top: widget.offset.dy +
-                      widget.size.height +
-                      32 -
-                      animation.value,
-                  child: Row(
-                    children: [
-                      Opacity(
-                        child: ConsultationTimeWidget(),
-                        opacity: 0,
-                      ),
-                      ValueListenableBuilder(
-                        valueListenable: widget.feedbackController,
-                        builder: (context, value, _) {
-                          print("changed");
-                          return Chip(
-                            backgroundColor: Colors.grey.shade500,
-                            label: Text(
-                              '${widget.feedbackController.text.length}/140',
-                              style: AppTextStyles.smallNormal
-                                  .copyWith(color: Colors.white),
-                            ),
-                          );
-                        },
-                      ),
-                    ],
-                  )),
-              Positioned(
-                  left: 16,
-                  right: 16,
-                  bottom: 0.0 - animation.value,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: CtaButton(
-                      height: 40,
-                      text: "Update Feedback",
-                      onPressed: () {},
-                      textColor: Colors.white,
+            ),
+            Positioned(
+                left: widget.offset.dx,
+                right: 0,
+                top: widget.offset.dy - animation.value,
+                child: widget.child),
+            Positioned(
+                left: widget.offset.dx + 16,
+                top: widget.offset.dy +
+                    widget.size.height +
+                    32 -
+                    animation.value,
+                child: Row(
+                  children: [
+                    const Opacity(
+                      opacity: 0,
+                      child: ConsultationTimeWidget(),
                     ),
-                  ))
-            ],
-          ),
+                    ValueListenableBuilder(
+                      valueListenable: widget.feedbackController,
+                      builder: (context, value, _) {
+                        return Chip(
+                          backgroundColor: Colors.grey.shade500,
+                          label: Text(
+                            '${widget.feedbackController.text.length}/140',
+                            style: AppTextStyles.smallNormal
+                                .copyWith(color: Colors.white),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                )),
+            Positioned(
+                left: 16,
+                right: 16,
+                bottom: 0.0 - animation.value,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: CtaButton(
+                    height: 40,
+                    text: "Update Feedback",
+                    onPressed: () {},
+                    textColor: Colors.white,
+                  ),
+                ))
+          ],
         ),
       ),
     );

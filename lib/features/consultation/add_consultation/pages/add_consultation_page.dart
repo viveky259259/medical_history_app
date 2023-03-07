@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:medical_history_app/common/constants.dart';
+import 'package:medical_history_app/common/strings.dart';
 import 'package:medical_history_app/common/text_styles.dart';
 import 'package:medical_history_app/features/consultation/add_consultation/widgets/molecules/consultation_service_type_widget.dart';
+import 'package:medical_history_app/features/consultation/common/consulation_colors.dart';
 import 'package:medical_history_app/features/home/widgets/atom/cta_button.dart';
 
 class AddConsultationPage extends StatefulWidget {
@@ -30,9 +32,9 @@ class _AddConsultationPageState extends State<AddConsultationPage>
     super.initState();
     controller = AnimationController(
         vsync: this,
-        duration: Duration(milliseconds: AppConstants.animtionTime));
+        duration: const Duration(milliseconds: AppConstants.animtionTime));
     colorAnimation = ColorTween(
-      begin: Color(0xff0055FF),
+      begin: ConsultationColors.pageBgColor,
       end: Colors.white70,
     ).animate(controller);
     layoutAnimation = IntTween(begin: 16, end: 0)
@@ -57,14 +59,14 @@ class _AddConsultationPageState extends State<AddConsultationPage>
               width: MediaQuery.of(context).size.width,
               child: ListTile(
                 leading: Hero(
-                    tag: "add-consultation-hero-tag",
+                    tag: Strings.consultationPageHeroTag,
                     child: Material(
                       color: Colors.white,
                       child: IconButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
-                          icon: Center(
+                          icon: const Center(
                             child: Icon(
                               Icons.close,
                               color: Colors.black,
@@ -82,7 +84,7 @@ class _AddConsultationPageState extends State<AddConsultationPage>
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const  EdgeInsets.symmetric(horizontal: 16),
                   child: ListView.separated(
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
@@ -100,7 +102,7 @@ class _AddConsultationPageState extends State<AddConsultationPage>
                         );
                       },
                       separatorBuilder: (context, index) {
-                        return SizedBox(
+                        return const  SizedBox(
                           height: 16,
                         );
                       },
@@ -109,13 +111,13 @@ class _AddConsultationPageState extends State<AddConsultationPage>
               ),
             ),
             AnimatedPositioned(
-              duration: Duration(milliseconds: AppConstants.animtionTime),
+              duration: const Duration(milliseconds: AppConstants.animtionTime),
               height: selectedIndex > -1 ? 48 : 0,
               bottom:  selectedIndex > -1 ? MediaQuery.of(context).padding.bottom + 16 :-100,
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 48,
-                padding: EdgeInsets.symmetric(horizontal: 32),
+                padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: CtaButton(
                   text: "Continue",
                   onPressed: () {},

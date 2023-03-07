@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medical_history_app/common/strings.dart';
 import 'package:medical_history_app/features/home/widgets/atom/cta_button.dart';
+import 'package:medical_history_app/features/prescription/common/prescription_color.dart';
 
 class PrescriptionPage extends StatelessWidget {
   final String image;
@@ -17,10 +19,10 @@ class PrescriptionPage extends StatelessWidget {
                   right: 16,
                   bottom: MediaQuery.of(context).size.height * 0.1),
               child: CtaButton(
-                  text: "Delete file",
+                  text:Strings.prescriptionDeleteButtonText,
                   height: 40,
-                  bgColor: Color(0xff552222),
-                  textColor: Color(0xffff6666),
+                  bgColor: PrescriptionColor.deleteButtonBgColor,
+                  textColor: PrescriptionColor.deleteTextColor,
                   onPressed: () {
                     Navigator.of(context).pop();
                     Navigator.of(context).pop("File Deleted");
@@ -38,10 +40,9 @@ class PrescriptionPage extends StatelessWidget {
               Positioned(
                   right: 16,
                   child: IconButton(
-                    icon: Icon(
+                    icon:const Icon(
                       Icons.close,
                       color: Colors.white,
-
                     ),
                     onPressed: () {
                       Navigator.of(context).pop();
@@ -63,9 +64,9 @@ class PrescriptionPage extends StatelessWidget {
             width: double.infinity,
             color: Colors.grey,
             child: Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               alignment: Alignment.topRight,
-              child: Icon(
+              child: const Icon(
                 Icons.more_horiz,
                 color: Colors.white,
                 size: 32,

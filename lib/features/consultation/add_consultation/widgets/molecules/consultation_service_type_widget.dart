@@ -23,7 +23,7 @@ class ConsultationServiceType extends StatelessWidget {
           ? Container(
               width: 8,
               alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Color(0xff0055FF),
               ))
@@ -35,7 +35,7 @@ class ConsultationServiceType extends StatelessWidget {
             : AppTextStyles.smallBigNormal,
       ),
       trailing: isSelected
-          ? Icon(
+          ? const Icon(
               Icons.check_circle,
               color: Colors.black,
               size: 32,

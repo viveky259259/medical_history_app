@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_history_app/common/strings.dart';
 
 class ConsultationType extends StatelessWidget {
   const ConsultationType({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class ConsultationType extends StatelessWidget {
             color: Colors.yellow,
           ),
         ),
-        Text("CONSULTATION"),
+        const Text(Strings.consultationText),
       ],
     );
   }

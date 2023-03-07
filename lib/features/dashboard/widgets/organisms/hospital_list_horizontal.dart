@@ -20,7 +20,7 @@ class HostpitalListHorizontal extends StatelessWidget {
           );
         },
         separatorBuilder: (context, index) {
-          return SizedBox(
+          return const SizedBox(
             width: 16,
           );
         },

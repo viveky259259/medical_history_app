@@ -5,7 +5,7 @@ import 'package:medical_history_app/features/home/widgets/molecules/end_item_bot
 import 'package:medical_history_app/features/home/widgets/molecules/inital_item_bottom_navigation_clipper.dart';
 import 'package:medical_history_app/features/home/widgets/molecules/middle_item_bottom_navigation_clipper.dart';
 
-const double BOTTOM_NAV_HEIGHT = 56;
+const double bottomNavHeight = 56;
 
 class AppBottomNavigationBar extends StatefulWidget {
   final Function(int) onChange;
@@ -77,13 +77,13 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
             return Stack(
               children: [
                 AnimatedPositioned(
-                  duration: Duration(milliseconds: AppConstants.animtionTime),
+                  duration: const Duration(milliseconds: AppConstants.animtionTime),
                   curve: Curves.easeIn,
                   left: widget.currentIndex * widthOfEachBlock + widthOfEachBlock / 2,
                   child: Container(
                     height: 4,
                     width: 4,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.white, shape: BoxShape.circle),
                   ),
                 ),

@@ -11,12 +11,12 @@ class ConciergeItem extends StatelessWidget {
         Container(
           height: 32,
           width: 32,
-          decoration: BoxDecoration(
+          decoration: const  BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
                   image: AssetImage("assets/face.png"), fit: BoxFit.cover)),
         ),
-        SizedBox(
+        const SizedBox(
           width: 16,
         ),
         Expanded(
@@ -26,7 +26,7 @@ class ConciergeItem extends StatelessWidget {
                     style:
                         AppTextStyles.normalBold.copyWith(color: Colors.black),
                     children: [
-              TextSpan(text: " "),
+                      const TextSpan(text: " "),
               TextSpan(
                 text: "Yadav",
                 style: AppTextStyles.normal.copyWith(color: Colors.black),
@@ -35,24 +35,24 @@ class ConciergeItem extends StatelessWidget {
         Container(
             height: 32,
             width: 32,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
                     image: AssetImage("assets/whatsapp_logo.png"),
                     fit: BoxFit.cover))),
-        SizedBox(
+        const SizedBox(
           width: 16,
         ),
         Container(
           height: 32,
           width: 32,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
                   image: AssetImage("assets/call_icon.png"),
                   fit: BoxFit.cover)),
         ),
-        SizedBox(
+        const SizedBox(
           width: 16,
         ),
       ],
