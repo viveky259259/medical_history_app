@@ -23,7 +23,7 @@ class CtaButton extends StatelessWidget {
       height: height ?? 32,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(48))),
             backgroundColor: bgColor,
           ),

@@ -23,8 +23,8 @@ class ConsultationItemBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(
+      padding: const  EdgeInsets.all(16),
+      decoration: const BoxDecoration(
           color: Color(0x1aC4C4C4),
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(16),
@@ -48,7 +48,7 @@ class ConsultationItemBottom extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           (isEditFeedbackEnabled)

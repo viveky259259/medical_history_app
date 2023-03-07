@@ -12,12 +12,12 @@ class ConsultationPrescription extends StatelessWidget {
           primary: true,
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () async {
                 var result = await Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => PrescriptionPage(
+                    builder: (context) => const PrescriptionPage(
                           image: "assets/prescription.jpeg",
                         )));
                 if (result is String && result.toString().isNotEmpty) {
@@ -30,14 +30,14 @@ class ConsultationPrescription extends StatelessWidget {
                 width: 48,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       image: AssetImage("assets/prescription.jpeg"),
                       fit: BoxFit.cover),
                 ),
               ),
             );
           },
-          separatorBuilder: (context, index) => SizedBox(
+          separatorBuilder: (context, index) => const SizedBox(
                 width: 16,
               ),
           itemCount: 3),

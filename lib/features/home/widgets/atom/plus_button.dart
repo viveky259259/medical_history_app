@@ -16,19 +16,19 @@ class PlusButton extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.zero,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Color(0x2f0037ff),
                   borderRadius: BorderRadius.all(Radius.circular(200))),
             ),
             Container(
               padding: EdgeInsets.zero,
-              margin: EdgeInsets.all(8),
-              decoration: BoxDecoration(
+              margin: const EdgeInsets.all(8),
+              decoration:const  BoxDecoration(
                 shape: BoxShape.circle,
                 color: Color(0xff0037ff),
               ),
               alignment: Alignment.center,
-              child: Text(
+              child: const Text(
                 "+",
                 textAlign: TextAlign.center,
                 style: TextStyle(

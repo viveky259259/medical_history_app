@@ -43,16 +43,16 @@ class HostpitalListItemHorizontal extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Hebbal, Banglore",
                         style: TextStyle(color: Colors.white),
                       ),
                       Container(
-                        padding: EdgeInsets.all(4),
+                        padding: const EdgeInsets.all(4),
                         decoration: BoxDecoration(
-                            color: Color(0xffFBE277),
+                            color: const Color(0xffFBE277),
                             borderRadius: BorderRadius.circular(4)),
-                        child: Text("1.9 km"),
+                        child:const  Text("1.9 km"),
                       )
                     ],
                   )

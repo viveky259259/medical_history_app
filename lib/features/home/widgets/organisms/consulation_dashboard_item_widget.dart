@@ -1,10 +1,5 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:medical_history_app/common/text_styles.dart';
 import 'package:medical_history_app/features/home/widgets/atom/consulation_time_widget.dart';
-import 'package:medical_history_app/features/home/widgets/atom/cta_button.dart';
-import 'package:medical_history_app/features/home/widgets/atom/dismiss_button.dart';
 import 'package:medical_history_app/features/home/widgets/molecules/consulation_card.dart';
 import 'package:medical_history_app/features/home/widgets/organisms/consultation_edit_feedback.dart';
 
@@ -31,7 +26,7 @@ class ConsultationDashboardItemWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ConsultationTimeWidget(),
+          const ConsultationTimeWidget(),
           Expanded(
               child: ConsultationCard(
             feedbackController: controller,
@@ -70,7 +65,7 @@ class ConsultationDashboardItemWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ConsultationTimeWidget(),
+        const ConsultationTimeWidget(),
         Expanded(
             child: ConsultationCard(
           isDeleteEnabled: isDeleteEnabled,

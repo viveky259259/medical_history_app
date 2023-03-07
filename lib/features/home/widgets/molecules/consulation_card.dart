@@ -24,9 +24,9 @@ class ConsultationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Colors.white,
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       elevation: 0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(16))),
       child: Column(
         children: [
@@ -47,7 +47,7 @@ class ConsultationCard extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-                Text("Aster RV - Multispeciality Hospital, JP Nagar, Bengaluru",
+                const Text("Aster RV - Multispeciality Hospital, JP Nagar, Bengaluru",
                     maxLines: 2, overflow: TextOverflow.ellipsis),
                 const SizedBox(
                   height: 16,
@@ -65,8 +65,8 @@ class ConsultationCard extends StatelessWidget {
                     if (isDeleteEnabled)
                       CtaButton(
                           text: "DELETE",
-                          bgColor: Color(0xffFDD6D4),
-                          textColor: Color(0xffFC4D53),
+                          bgColor: const Color(0xffFDD6D4),
+                          textColor: const Color(0xffFC4D53),
                           onPressed: () {}),
                   ],
                 ),

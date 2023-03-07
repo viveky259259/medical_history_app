@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         },
         itemBuilder: (context, index) {
           if (index > _pages.length) {
-            return Scaffold();
+            return const Scaffold();
           }
           return _pages[index];
         },
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
         onChange: (int selectedIndex) {
           _currentPageIndex = selectedIndex;
           _pageController.animateToPage(selectedIndex,
-              duration: Duration(milliseconds: AppConstants.animtionTime),
+              duration: const Duration(milliseconds: AppConstants.animtionTime),
               curve: Curves.easeIn);
           setState(() {});
         },

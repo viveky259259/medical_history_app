@@ -27,23 +27,23 @@ class _DashboardPageState extends State<DashboardPage> {
               "Hospitals near you",
               style: AppTextStyles.smallBigBold,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             SizedBox(
                 height: MediaQuery.of(context).size.height * 0.45,
                 child: HostpitalListHorizontal()),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             Text(
               "Your medical concierge",
               style: AppTextStyles.smallBigBold,
             ),
-            Divider(
+            const Divider(
               color: Colors.grey,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 4),
               child: ConciergeItem(),
             ),
-            Divider(
+            const Divider(
               color: Colors.grey,
             ),
           ],

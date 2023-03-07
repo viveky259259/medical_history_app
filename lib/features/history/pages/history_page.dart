@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:medical_history_app/common/constants.dart';
+import 'package:medical_history_app/common/strings.dart';
 import 'package:medical_history_app/common/text_styles.dart';
 import 'package:medical_history_app/features/consultation/add_consultation/pages/add_consultation_page.dart';
 import 'package:medical_history_app/features/home/widgets/atom/line_widget.dart';
@@ -18,7 +18,6 @@ class HistoryPage extends StatefulWidget {
 }
 
 class _HistoryPageState extends State<HistoryPage> {
-  late Size _screenSize;
   late ScrollController _scrollController;
   StreamController<double> streamController = StreamController<double>();
 
@@ -37,9 +36,8 @@ class _HistoryPageState extends State<HistoryPage> {
 
   @override
   Widget build(BuildContext context) {
-    _screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(176, 184, 200, 0.4),
+      backgroundColor: const Color.fromRGBO(176, 184, 200, 0.4),
       body: SafeArea(child: LayoutBuilder(builder: (context, cns) {
         return ListView(
           controller: _scrollController,
@@ -56,7 +54,7 @@ class _HistoryPageState extends State<HistoryPage> {
             )),
             Row(
               children: [
-                Expanded(flex: 1, child: SizedBox()),
+                const Expanded(flex: 1, child: SizedBox()),
                 Expanded(
                     flex: 19,
                     child: LayoutBuilder(builder: (context, constraints) {
@@ -79,17 +77,17 @@ class _HistoryPageState extends State<HistoryPage> {
                                                       alignment: Alignment
                                                           .topRight,
                                                       isIos: true,
-                                                      duration: Duration(
+                                                      duration: const Duration(
                                                           milliseconds:
                                                               AppConstants
                                                                   .animtionTime),
                                                       child:
-                                                          AddConsultationPage()));
+                                                      const AddConsultationPage()));
                                             },
-                                      child: Material(
+                                      child: const Material(
                                         color: Colors.transparent,
                                         child: Hero(
-                                            tag: "add-consultation-hero-tag",
+                                            tag: Strings.consultationPageHeroTag,
                                             child: PlusButton(),
                                           ),
                                       ),
@@ -97,10 +95,10 @@ class _HistoryPageState extends State<HistoryPage> {
                                     StreamBuilder<double>(
                                       builder: (context,
                                           AsyncSnapshot<double> snapshot) {
-                                        BoxConstraints? _cns;
+                                        BoxConstraints? calculatedConstraints;
 
                                         try {
-                                          _cns = constraints.copyWith(
+                                          calculatedConstraints = constraints.copyWith(
                                               minHeight: 0,
                                               maxHeight: _scrollController
                                                       .position
@@ -108,20 +106,22 @@ class _HistoryPageState extends State<HistoryPage> {
                                                   (snapshot.data ?? 0),
                                               minWidth: 3,
                                               maxWidth: 3);
-                                        } catch (e) {}
+                                        } catch (e) {
+                                          // TODO: act on exceptions
+                                        }
                                         return ConstrainedBox(
-                                            constraints: _cns ?? constraints,
-                                            child: TimerLineWidget());
+                                            constraints: calculatedConstraints ?? constraints,
+                                            child: const TimerLineWidget());
                                       },
                                       stream: streamController.stream,
                                     )
                                   ],
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 16,
                               ),
-                              Expanded(
+                              const Expanded(
                                 flex: 15,
                                 child: SizedBox(),
                               ),
@@ -137,10 +137,10 @@ class _HistoryPageState extends State<HistoryPage> {
                                 child: Text(
                                   "Add Consultation",
                                   style: AppTextStyles.normalBold
-                                      .copyWith(color: Color(0xff0037ff)),
+                                      .copyWith(color: const Color(0xff0037ff)),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 8,
                               ),
                               ConsultationDashboardItemWidget(

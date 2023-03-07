@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class UnSelectedItemCustomShape extends CustomClipper<Path> {
   @override
   getClip(Size size) {
-    print(size);
     var path = Path();
 
     path.moveTo(0, 0);

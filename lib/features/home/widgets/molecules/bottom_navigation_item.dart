@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medical_history_app/common/constants.dart';
 import 'package:medical_history_app/features/home/widgets/molecules/unselected_item_bottom_navigation_clipper.dart';
 import 'package:medical_history_app/features/home/widgets/organisms/bottom_navigation_bar.dart';
 
@@ -38,7 +37,7 @@ class _AppBottomNavigationItemState extends State<AppBottomNavigationItem> {
         clipper:
             widget.isSelected ? widget.clipper : UnSelectedItemCustomShape(),
         child: Container(
-          height: BOTTOM_NAV_HEIGHT,
+          height: bottomNavHeight,
           color: widget.isSelected ? Colors.black : Colors.transparent,
           child: Stack(
             children: [

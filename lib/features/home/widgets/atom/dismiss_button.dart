@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_history_app/common/strings.dart';
 import 'package:medical_history_app/features/home/common/home_colors.dart';
 
 class DismissButton extends StatelessWidget {
@@ -21,7 +22,7 @@ class DismissButton extends StatelessWidget {
       height: height ?? 40,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(48))),
             backgroundColor: bgColor,
           ),
@@ -29,15 +30,15 @@ class DismissButton extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
+              const Icon(
                 Icons.close,
                 color: Colors.black,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 4,
               ),
               Text(
-                "Dismiss",
+               Strings.dismissButtonText,
                 style: TextStyle(
                   color: textColor,
                 ),
