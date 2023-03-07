@@ -45,12 +45,9 @@ class _AppBottomNavigationItemState extends State<AppBottomNavigationItem> {
               Center(
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: AnimatedContainer(
-                    duration: Duration(seconds: 1),
-                    child: Image.asset(
-                      widget.icon,
-                      color: widget.isSelected ? Colors.white : Colors.black,
-                    ),
+                  child: Image.asset(
+                    widget.icon,
+                    color: widget.isSelected ? Colors.white : Colors.black,
                   ),
                 ),
               ),
